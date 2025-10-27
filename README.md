@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🔐 Serene Auth — React + Node.js + MySQL Authentication System
 
 A simple and modern authentication system built using **React (frontend)**, **Node.js/Express (backend)**, and **MySQL (database)**.  
@@ -91,3 +92,6 @@ CREATE TABLE users (
 👨‍💻 Author
 
 Developed by: Rakshith H N
+=======
+# myfirst_database_using_mysql
+>>>>>>> e0af4d224b4b555c7cf8d557a3e8f7f6013a34ae
