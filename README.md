@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# 🔐 Serene Auth — React + Node.js + MySQL Authentication System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple and modern authentication system built using **React (frontend)**, **Node.js/Express (backend)**, and **MySQL (database)**.  
+This project includes user **signup**, **login**, **form validation**, and secure **API integration**.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📁 Project Structure
 
-### `npm start`
+sql/
+│
+├── backend/
+│ ├── server.js
+│ ├── package.json
+│ ├── routes/
+│ │ └── auth.js
+│ ├── controllers/
+│ │ └── authController.js
+│ ├── config/
+│ │ └── db.js
+│ └── .env
+│
+├── frontend/
+│ ├── src/
+│ │ ├── components/
+│ │ │ ├── Login.js
+│ │ │ └── Signup.js
+│ │ ├── pages/
+│ │ │ └── Dashboard.js
+│ │ ├── App.js
+│ │ ├── index.js
+│ │ └── Auth.css
+│ ├── package.json
+│ └── public/
+│
+└── README.md
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚙️ Features
 
-### `npm test`
+✅ User **Signup** and **Login**  
+✅ Frontend form validation (email format, password match, required fields)  
+✅ Backend API endpoints for authentication  
+✅ LocalStorage token and user data storage  
+✅ Responsive, minimal, and modern UI design  
+✅ Easy integration with any backend  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🧠 Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Frontend
+- React.js (Hooks, useState, useNavigate)
+- React Router DOM
+- CSS3 for styling
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Backend
+- Node.js
+- Express.js
+- MySQL (with mysql2 or Sequelize)
+- bcrypt for password hashing
+- dotenv for environment variables
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🔑 API Endpoints
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+| Method | Endpoint        | Description       |
+|--------|-----------------|-------------------|
+| `POST` | `/signup`       | Register a new user |
+| `POST` | `/login`        | Login existing user |
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🧩 Example Request (Signup)
+```bash
+POST /signup
+Content-Type: application/json
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+CREATE TABLE users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(255) UNIQUE,
+  password VARCHAR(255),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+👨‍💻 Author
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Developed by: Rakshith H N

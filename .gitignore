@@ -21,3 +21,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# backenfd node modules
+C:\Users\Rakshith H N\OneDrive\Desktop\sql\backend\node_modules
+# backend environment variables
+C:\Users\Rakshith H N\OneDrive\Desktop\sql\backend\.env
